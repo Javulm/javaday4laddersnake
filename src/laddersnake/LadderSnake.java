@@ -74,10 +74,14 @@ class gamePlayer {
     }
 }
 public class LadderSnake {
+	
 	public static void main(String[] args) {
+	
 		System.out.println("welcome to snake and ladder games");
+		
 		gamePlayer play1 = new laddersnake.gamePlayer();
-		 play1.gameStart("Player 1");
+		
+		play1.gameStart("Player 1");
 	        
 	        System.out.println("Congratulation Player1 completed the game in " + play1.attempts + " attempts.");
 	}
