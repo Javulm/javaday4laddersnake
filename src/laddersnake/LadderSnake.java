@@ -4,11 +4,15 @@ import java.util.Random;
 
 class gamePlayer {
 	
+	Random rand = new Random();
+	
     int currentPosition = 0;
     
-    Random rand = new Random();
+    final int noPlay = 0, ladder = 1, snake = 2;
     
     int dieRoll = rand.nextInt(6)+1;
+    
+    int gameCheck = rand.nextInt(3);
 
 }
 public class LadderSnake {
