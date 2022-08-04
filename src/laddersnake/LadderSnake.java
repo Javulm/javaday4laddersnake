@@ -8,11 +8,7 @@ class gamePlayer {
     
     Random rand = new Random();
     
-    int attempts = 0;
-    
-    final int noPlay = 0, ladder = 1, snake = 2;
-    
-    int endGame = 0;
+    int dieRoll = rand.nextInt(6)+1;
 
 }
 public class LadderSnake {
