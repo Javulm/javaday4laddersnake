@@ -45,10 +45,10 @@ class gamePlayer {
             play1.gameStart("Player1");            
             play2.gameStart("Player2");           
         }        
-        if (play1.endGame < play2.endGame) {        	
-            System.out.println("Congratulation player2 you have won the game.");            
-        } else if (play1.endGame > play2.endGame) {        	
-            System.out.println("Congratulation player1 you have won the game.");     
+        if (play1.endGame > play2.endGame) {        	
+            System.out.println("Congratulation player1 you have won the game.");            
+        } else if (play1.endGame < play2.endGame) {        	
+            System.out.println("Congratulation player2 you have won the game.");     
         } else { 	
             System.out.println("match draw");      
         }
