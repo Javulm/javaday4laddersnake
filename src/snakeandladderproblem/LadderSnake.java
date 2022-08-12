@@ -1,4 +1,4 @@
-package laddersnake;
+package snakeandladderproblem;
 
 import java.util.Random;
 
@@ -15,8 +15,6 @@ class gamePlayer {
     int attempts = 0;
     
     public void gameStart(String playerName) {
-    	
-        while (endGame <= 100) {
         	
             int rollDie = rand.nextInt(6) + 1;
             
@@ -36,6 +34,8 @@ class gamePlayer {
                 
                 attempts++;
                 
+                endGame = currentPosition;
+                
             } else if (gameCheck == ladder) {
             	
                 currentPosition = currentPosition + rollDie;
@@ -45,6 +45,8 @@ class gamePlayer {
                 System.out.println(playerName + "'s current position is : " + currentPosition);
                 
                 attempts++;
+                
+                endGame = currentPosition;
                 
             } else {
             	
@@ -66,23 +68,42 @@ class gamePlayer {
                 }
                 
                 attempts++;
-                
-            }
-            endGame = currentPosition;
+               
+                endGame = currentPosition;
         }
 
     }
-}
-public class LadderSnake {
-	
+    public class LadderSnake{
 	public static void main(String[] args) {
 	
 		System.out.println("welcome to snake and ladder games");
 		
-		gamePlayer play1 = new laddersnake.gamePlayer();
+		gamePlayer play1 = new gamePlayer();
 		
-		play1.gameStart("Player 1");
-	        
-	        System.out.println("Congratulation Player1 completed the game in " + play1.attempts + " attempts.");
-	}
+		snakeandladderproblem.gamePlayer play2 = new gamePlayer();
+		
+		 
+        while (play1.endGame <= 100 && play2.endGame <= 100) {
+        	
+            play1.gameStart("Player1");
+            
+            play2.gameStart("Player2");
+            
+        }
+        
+        if (play1.endGame < play2.endGame) {
+        	
+            System.out.println("Congratulation player 2 you have won the game.");
+            
+        } else if (play1.endGame > play2.endGame) {
+        	
+            System.out.println("Congratulation player 1 you have won the game.");
+            
+        } else {
+        	
+            System.out.println("match draw");
+            
+        }
+    }
+}
 }
